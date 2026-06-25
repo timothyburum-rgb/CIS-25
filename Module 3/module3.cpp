@@ -10,7 +10,7 @@ cout << "Enter item name: ";
 cin >> itemName;
 cout << "Enter quantity: ";
 cin >> quantity;
-cout << "Enter cost: ";
+cout << "Enter cost per item: ";
 cin >> cost;
 
 cout << "Total cost for " << itemName << "; $" << (quantity * cost) << end1;
