@@ -8,7 +8,7 @@ int main() {
 
 cout << "Enter item name: ";
 cin >> itemName;
-cout << "Enter quantity: ";
+cout << "Enter quantity of item: ";
 cin >> quantity;
 cout << "Enter cost per item: ";
 cin >> cost;
