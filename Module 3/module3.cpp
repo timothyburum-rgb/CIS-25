@@ -1,4 +1,4 @@
-#include <iostream)
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -13,6 +13,6 @@ cin >> quantity;
 cout << "Enter cost per item: ";
 cin >> cost;
 
-cout << "Total cost for " << itemName << "; $" << (quantity * cost) << end1;
+cout << "Total cost for " << itemName << ": $" << (quantity * cost) << endl;
 return 0;
 }
