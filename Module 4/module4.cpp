@@ -8,6 +8,7 @@ int main () {
   cout << "2. Inspect Item\n";
   cout << "3. Remove Item\n";
   cout << "Enter Choice: ";
+  
   if (choice == 1) {
   cout << "Adding Item...\n";
   }
