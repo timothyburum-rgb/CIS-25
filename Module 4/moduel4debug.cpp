@@ -13,9 +13,11 @@ int main() {
     cout << "Largest number: " << n1;
   }
 else {
+  //changed n2==n1 to n2>=n1
   if (n2 >= n1 && n2 >= n3) {
     cout << "Largest number: " << n2;
   }
+  //replaced last if statement: if (n3>=n1 && n3>=n2), with else statement
   else {
     cout << "Largest number: " << n3;
   }
