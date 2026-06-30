@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int() main {
+int main() {
   //added commas between each variable and ended the line with a semicolon instead of a comma
   float n1, n2, n3;
   cout << "Enter three numbers: ";
