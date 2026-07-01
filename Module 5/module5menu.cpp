@@ -8,7 +8,7 @@ void showMenu() {
 }
 
 void addItem() {
-  string itemName:
+  string itemName;
   cout << "Enter item name: ";
   cin >> itemName;
   cout << itemName << " added.\n";
