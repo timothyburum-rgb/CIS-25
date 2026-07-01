@@ -27,7 +27,7 @@ int main() {
       addItem();
     }
     if (option == 2) {
-      viewInventory();
+      viewCart();
     }
   } while (option != 3);
   return 0;
