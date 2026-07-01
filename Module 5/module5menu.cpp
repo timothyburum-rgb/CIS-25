@@ -25,9 +25,11 @@ int main() {
     cin >> option;
     if (option == 1) {
       addItem();
+      cout << "Adding item...\n";
     }
     if (option == 2) {
       viewInventory();
+      cout << "Viewing item...\n";
     }
   } while (option != 3);
   return 0;
