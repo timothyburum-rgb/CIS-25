@@ -14,8 +14,8 @@ void addItem() {
   cout << itemName << " added.\n";
 }
 
-void viewInventory() {
-  cout << "Viewing inventory...\n";
+void viewCart() {
+  cout << "Viewing cart...\n";
 }
 
 int main() {
