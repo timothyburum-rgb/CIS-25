@@ -26,7 +26,7 @@ void addItem() {
     cin >> item.price;
     cout << "Enter item quantity: ";
     cin >> item.quantity;
-    ofstream file("cart.txt", ios::app);
+    ofstream file("C:\\Users\\timot\\cart.txt" , ios::app);
     file << item.name << " " << item.price << " " << item.quantity << "\n";
     file.close();
     cout << "Item added to cart.\n";
@@ -34,7 +34,7 @@ void addItem() {
 void viewCheckout() {
     Item item;
     float grandTotal = 0;
-    ifstream file("cart.txt");
+    ifstream file("C:\\Users\\timot\\cart.txt");
     cout << "==== CHECKOUT ====\n";
     while (file >> item.name >> item.price >> item.quantity) {
         cout << item.name << " - $" << item.price << " x " << item.quantity << " = $" << item.getTotalPrice() << "\n";
