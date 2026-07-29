@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-//class to store each fitness entry
+//class to store each entry
 class Entry {
 public:
     int id;
@@ -12,7 +12,7 @@ public:
     int duration;
 };
 
-//display menu options
+//display menu
 void showMenu() {
     cout << "\n==== FITNESS & HABIT TRACKER ====\n";
     cout << "1. Add Entry\n";
@@ -24,7 +24,7 @@ void showMenu() {
     cout << "Enter choice: ";
 }
 
-//add a new fitness entry
+//add new entry
 void addEntry(Entry* entries, int& count) {
     cout << "Enter ID: ";
     cin >> entries[count].id;
@@ -38,7 +38,7 @@ void addEntry(Entry* entries, int& count) {
     cout << "Entry added.\n";
 }
 
-//display all saved entries
+//display entries
 void viewEntries(Entry* entries, int count) {
     if (count == 0) {
         cout << "No entries on record.\n";
@@ -53,7 +53,7 @@ void viewEntries(Entry* entries, int count) {
     }
 }
 
-//update an entry's duration by ID
+//update entry
 void updateEntry(Entry* entries, int count) {
     int searchID;
     cout << "Enter ID to update: ";
@@ -69,7 +69,7 @@ void updateEntry(Entry* entries, int count) {
     cout << "Entry not found.\n";
 }
 
-//delete an entry by ID
+//delete entry
 void deleteEntry(Entry* entries, int& count) {
     int searchID;
     cout << "Enter ID to delete: ";
@@ -87,7 +87,7 @@ void deleteEntry(Entry* entries, int& count) {
     cout << "Entry not found.\n";
 }
 
-//display total workout time across all entries
+//display total time
 void totalWorkoutTime(Entry* entries, int count) {
     int total = 0;
     for (int i = 0; i < count; i++) {
@@ -96,7 +96,7 @@ void totalWorkoutTime(Entry* entries, int count) {
     cout << "Total workout time: " << total << " minutes\n";
 }
 
-//save all entries to fitness.txt
+//save entries to .txt file
 void saveEntries(Entry* entries, int count) {
     ofstream file("C:\\Users\\timot\\fitness.txt");
     for (int i = 0; i < count; i++) {
@@ -108,7 +108,7 @@ void saveEntries(Entry* entries, int count) {
     file.close();
 }
 
-//load entries from fitness.txt
+//load entries from .txt file
 void loadEntries(Entry* entries, int& count) {
     ifstream file("C:\\Users\\timot\\fitness.txt");
     if (!file)
@@ -123,11 +123,11 @@ void loadEntries(Entry* entries, int& count) {
 }
 
 int main() {
-    //dynamic array to store up to 100 entries
+    //dynamic array
     Entry* entries = new Entry[100];
     int count = 0;
 
-    //load existing entries from file on startup
+    //load entries on startup
     loadEntries(entries, count);
 
     int choice;
