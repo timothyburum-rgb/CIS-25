@@ -1,10 +1,9 @@
-
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
 
-//class to store each entry
+//class to store each fitness entry
 class Entry {
 public:
     int id;
@@ -13,7 +12,7 @@ public:
     int duration;
 };
 
-//display menu
+//display menu options
 void showMenu() {
     cout << "\n==== FITNESS & HABIT TRACKER ====\n";
     cout << "1. Add Entry\n";
@@ -25,7 +24,7 @@ void showMenu() {
     cout << "Enter choice: ";
 }
 
-//add an entry
+//add a new fitness entry
 void addEntry(Entry* entries, int& count) {
     cout << "Enter ID: ";
     cin >> entries[count].id;
@@ -39,7 +38,7 @@ void addEntry(Entry* entries, int& count) {
     cout << "Entry added.\n";
 }
 
-//display entries
+//display all saved entries
 void viewEntries(Entry* entries, int count) {
     if (count == 0) {
         cout << "No entries on record.\n";
@@ -54,7 +53,7 @@ void viewEntries(Entry* entries, int count) {
     }
 }
 
-//update an entry
+//update an entry's duration by ID
 void updateEntry(Entry* entries, int count) {
     int searchID;
     cout << "Enter ID to update: ";
@@ -70,7 +69,7 @@ void updateEntry(Entry* entries, int count) {
     cout << "Entry not found.\n";
 }
 
-//delete an entry
+//delete an entry by ID
 void deleteEntry(Entry* entries, int& count) {
     int searchID;
     cout << "Enter ID to delete: ";
@@ -88,7 +87,7 @@ void deleteEntry(Entry* entries, int& count) {
     cout << "Entry not found.\n";
 }
 
-//display total workout time
+//display total workout time across all entries
 void totalWorkoutTime(Entry* entries, int count) {
     int total = 0;
     for (int i = 0; i < count; i++) {
@@ -107,7 +106,6 @@ void saveEntries(Entry* entries, int count) {
             << entries[i].duration << "\n";
     }
     file.close();
-    cout << "Entries saved.\n";
 }
 
 //load entries from fitness.txt
@@ -125,33 +123,37 @@ void loadEntries(Entry* entries, int& count) {
 }
 
 int main() {
-    //dynamic array
+    //dynamic array to store up to 100 entries
     Entry* entries = new Entry[100];
     int count = 0;
 
-    //load existing entries from file
+    //load existing entries from file on startup
     loadEntries(entries, count);
 
     int choice;
     do {
         showMenu();
         cin >> choice;
-        if (choice == 1)
+        if (choice == 1) {
             addEntry(entries, count);
+            saveEntries(entries, count);
+        }
         if (choice == 2)
             viewEntries(entries, count);
-        if (choice == 3)
+        if (choice == 3) {
             updateEntry(entries, count);
-        if (choice == 4)
+            saveEntries(entries, count);
+        }
+        if (choice == 4) {
             deleteEntry(entries, count);
+            saveEntries(entries, count);
+        }
         if (choice == 5)
             totalWorkoutTime(entries, count);
         if (choice == 6)
             cout << "Goodbye!\n";
     } while (choice != 6);
 
-    //save entries and free memory on exit
-    saveEntries(entries, count);
     delete[] entries;
     return 0;
 }
